@@ -15,20 +15,7 @@ spec:
         app: php
     spec:
       containers:
-        - name: php
-          image: php:v1     # <-- Change to your registry/image
-          imagePullPolicy: IfNotPresent
-          ports:
-            - containerPort: 91
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 91
-            initialDelaySeconds: 5
-            periodSeconds: 5
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 91
-            initialDelaySeconds: 15
-            periodSeconds: 10
+      - name: php
+        image: madhurasr/php:latest
+        ports:
+        - containerPort: 91
